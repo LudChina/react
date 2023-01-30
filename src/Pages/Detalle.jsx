@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getById, getDescription } from "../Services/productoService";
+import { Link } from "react-router-dom";
 
 function Detalle (){
     const { productoId }= useParams();
@@ -39,8 +40,11 @@ function Detalle (){
     <div>
         <h2>{producto.title}</h2>
         <p>{description.plain_text}</p>
+        <img src={producto.thumbnail}  alt="" />
+        <p>{producto.condition}</p>
         <p>${producto.price}</p>
-        <p>{producto.warranty}</p>
+        <button><Link to="/login">COMPRAR</Link></button>
+        <button><Link to="/">Volver</Link></button>
     </div>
     );    
 }
