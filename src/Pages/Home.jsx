@@ -1,12 +1,15 @@
 import Productos from "../Components/Productos";
+import firebase from "../Config/firebase";
 
-function Home(){
+function Home() {
+  console.log("firebase");
+  console.log(firebase);
     return(
         <>
           <div className="">
             <Productos />
           </div>
         </>
-    )
+    );
 }
-export default Home
+export default Home;
